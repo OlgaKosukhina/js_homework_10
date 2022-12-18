@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(241, 233, 233);
+}
+
+.cocktails {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 600px);
+    gap: 32px;
+    align-items: baseline;
+}
+
+.cocktail {
+    width: 600px;
+    height: 600px;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cocktail-name {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.cocktail-image {
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+}
+
+.cocktail-instruction {
+    width: 400px;
+}

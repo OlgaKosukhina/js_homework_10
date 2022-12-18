@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="cocktails"></div>
+
+    <script src="data.js"></script>
+    <script>
+
+        const cocktailsList = document.querySelector('.cocktails');
+
+        const drinksByNamesData = JSON.parse(data);
+        console.log(drinksByNamesData);
+
+        drinksByNamesData.forEach(cocktailData => {
+
+            const cocktailElement = document.createElement('div');
+            cocktailElement.classList.add('cocktail');
+
+            const cocktailElementName = document.createElement('h2');
+            cocktailElementName.classList.add('cocktail-name');
+            cocktailElementName.textContent = cocktailData.strDrink;
+
+            const cocktailElementImage = document.createElement('img');
+            cocktailElementImage.classList.add('cocktail-image')
+            cocktailElementImage.setAttribute('alt', cocktailData.strDrink);
+            cocktailElementImage.src = cocktailData.strDrinkThumb;
+
+            const cocktailElementInstruction = document.createElement('p');
+            cocktailElementInstruction.classList.add('cocktail-instruction');
+            cocktailElementInstruction.textContent = cocktailData.strInstructions;
+
+            cocktailsList.appendChild(cocktailElement);
+            cocktailElement.appendChild(cocktailElementName);
+            cocktailElement.appendChild(cocktailElementImage);
+            cocktailElement.appendChild(cocktailElementInstruction);
+        });
+
+    </script>
+</body>
+
+</html>
